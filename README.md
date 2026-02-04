@@ -30,10 +30,8 @@ Anbindung an die **Remko Smart Wärmepumpe** im lokalen Netzwerk (HTTP/CGI).
 
 Module per **Module Control** in IP-Symcon einbinden (Repository-URL oder Kopie der Ordner).
 
-**Repository-URL (GitHub):**
-```
-https://github.com/beeXperts-Niko/Symcon-eHome-Modules
-```
+**Repository-URL (GitHub):**  
+[https://github.com/beeXperts-Niko/Symcon-eHome-Modules](https://github.com/beeXperts-Niko/Symcon-eHome-Modules)
 
 ## Anforderungen
 
