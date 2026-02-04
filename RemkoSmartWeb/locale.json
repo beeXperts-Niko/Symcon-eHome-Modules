@@ -1,0 +1,12 @@
+{
+    "translations": {
+        "de": {
+            "Hostname or IP address": "Hostname oder IP-Adresse",
+            "Refresh interval (seconds)": "Aktualisierungsintervall (Sekunden)",
+            "Receive values": "Werte abrufen",
+            "Connection successful": "Verbindung erfolgreich",
+            "Not connected": "Nicht verbunden",
+            "Connection failed": "Verbindung fehlgeschlagen"
+        }
+    }
+}

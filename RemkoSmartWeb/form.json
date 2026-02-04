@@ -1,0 +1,14 @@
+{
+    "elements": [
+        { "type": "ValidationTextBox", "name": "Address", "caption": "Hostname or IP address" },
+        { "type": "NumberSpinner", "name": "RefreshInterval", "caption": "Refresh interval (seconds)", "minimum": 30 }
+    ],
+    "actions": [
+        { "type": "Button", "label": "Receive values", "onClick": "RSW_GetValues($id);" }
+    ],
+    "status": [
+        { "code": 102, "icon": "active", "caption": "Connection successful" },
+        { "code": 104, "icon": "inactive", "caption": "Not connected" },
+        { "code": 201, "icon": "error", "caption": "Connection failed" }
+    ]
+}

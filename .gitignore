@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Alte / temporäre Ordner (nicht ins Repo)
+_temp_wolf_repo/
+
+# IDE / Projekt
+.idea/
+.vscode/
+*.sublime-*

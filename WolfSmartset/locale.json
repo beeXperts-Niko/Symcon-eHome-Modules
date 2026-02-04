@@ -1,0 +1,19 @@
+{
+    "translations": {
+        "de": {
+            "Update environment": "Umgebung aktualisieren",
+            "Receive values": "Werte abrufen",
+            "Expert password": "Experten-Passwort",
+            "Refresh interval (seconds)": "Aktualisierungsintervall (Sekunden)",
+            "Login successful": "Anmeldung erfolgreich",
+            "Not connected": "Nicht verbunden",
+            "Authentication failed": "Authentifizierung fehlgeschlagen",
+            "No credentials left": "Keine Zugangsdaten",
+            "Communication error": "Kommunikationsfehler",
+            "If you have more than one system, you can change the system number to 1 and more.": "Falls Sie mehr als ein System besitzen, können Sie die Systemnummer auf 1 oder höher ändern.",
+            "System number": "Systemnummer",
+            "By default Expert password is 1111.": "Standardmäßig ist das Experten-Passwort 1111.",
+            "Session beenden (Logout)": "Session beenden (Logout)"
+        }
+    }
+}

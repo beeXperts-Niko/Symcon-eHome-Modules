@@ -1,0 +1,23 @@
+{
+    "elements": [
+        { "type": "ValidationTextBox", "name": "Username", "caption": "Username" },
+        { "type": "PasswordTextBox", "name": "Password", "caption": "Password" },
+        { "type": "NumberSpinner", "name": "RefreshInterval", "caption": "Refresh interval (seconds)", "minimum": 60 },
+        { "type": "Label", "label": "By default Expert password is 1111." },
+        { "type": "PasswordTextBox", "name": "ExpertPassword", "caption": "Expert password" },
+        { "type": "Label", "label": "If you have more than one system, you can change the system number to 1 and more." },
+        { "type": "NumberSpinner", "name": "SystemNumber", "caption": "System number", "minimum": 0 }
+    ],
+    "actions": [
+        { "type": "Button", "label": "Update environment", "onClick": "WSS_GetSystemInfo($id);" },
+        { "type": "Button", "label": "Receive values", "onClick": "WSS_GetValues($id);" },
+        { "type": "Button", "label": "Session beenden (Logout)", "onClick": "WSS_Logout($id);" }
+    ],
+    "status": [
+        { "code": 102, "icon": "active", "caption": "Login successful" },
+        { "code": 104, "icon": "inactive", "caption": "Not connected" },
+        { "code": 201, "icon": "error", "caption": "Authentication failed" },
+        { "code": 202, "icon": "error", "caption": "No credentials left" },
+        { "code": 203, "icon": "error", "caption": "Communication error" }
+    ]
+}
