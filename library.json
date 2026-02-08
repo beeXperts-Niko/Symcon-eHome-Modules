@@ -1,9 +1,9 @@
 {
   "id": "{8A8E0A2C-5B2D-4E1F-9C3A-7D6B4E5F8A9C}",
   "author": "Niko Sinthern",
-  "name": "beeXperts Symcon Module",
-  "url": "https://github.com/beeXperts/Symcon",
-  "version": "1.0",
+  "name": "Sinthex eHome Modules 2.0",
+  "url": "https://github.com/beeXperts-Niko/Symcon-eHome-Modules",
+  "version": "2.0",
   "build": 0,
   "date": 0,
   "compatibility": {
