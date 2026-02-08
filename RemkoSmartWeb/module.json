@@ -1,14 +1,1 @@
-{
-    "id": "{56bf3243-6c7e-4b04-00f7-92b00838b342}",
-    "name": "RemkoSmartWeb",
-    "type": 3,
-    "vendor": "REMKO GmbH & Co. KG",
-    "author": "Niko Sinthern",
-    "aliases": [
-        "Remko Smart Wärmepumpe"
-    ],
-    "parentRequirements": [],
-    "childRequirements": [],
-    "implemented": [],
-    "prefix": "RSW"
-}
+{"id":"{56bf3243-6c7e-4b04-00f7-92b00838b342}","name":"RemkoSmartWeb","type":3,"vendor":"REMKO GmbH & Co. KG","author":"Niko Sinthern","aliases":["Remko Smart Wärmepumpe","Remko Wärmepumpe"],"parentRequirements":[],"childRequirements":[],"implemented":[],"prefix":"RSW"}
