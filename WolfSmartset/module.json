@@ -1,1 +1,1 @@
-{"id":"{56bf3243-6c7e-4b04-a0f7-92b00838b343}","name":"WolfSmartset","type":3,"vendor":"Wolf Heiztechnik","author":"Niko Sinthern","aliases":["Wolf SmartSet-Device","Wolf Lüftungsanlage"],"parentRequirements":[],"childRequirements":[],"implemented":[],"prefix":"WSS"}
+{"id":"{56BF3243-6C7E-4B04-A0F7-92B00838B343}","name":"WolfSmartset","type":3,"vendor":"Wolf Heiztechnik","author":"Niko Sinthern","aliases":["Wolf SmartSet-Device","Wolf Lüftungsanlage"],"parentRequirements":[],"childRequirements":[],"implemented":[],"prefix":"WSS"}
