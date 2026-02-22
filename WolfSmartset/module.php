@@ -283,6 +283,7 @@ final class WolfSessionManager
         $this->module->SetStatus(WSS_STATUS_INACTIVE);
     }
 
+    /** Für Fehlerbehandlung (z. B. GetParameterValues-Error): Token verwerfen, nächster Aufruf macht Neu-Login. */
     public function clearStoredToken(): void
     {
         $tokenId = $this->getTokenVariableId();
@@ -384,6 +385,10 @@ final class WolfVariableBuilder
         $properties = $propertiesId !== false ? (array) json_decode((string) GetValueString($propertiesId), true) : [];
 
         foreach ($descriptors as $desc) {
+            // Wie Home-Assistant wolflink: „Reglertyp“ liefert die API keinen Wert → überspringen
+            if (isset($desc->Name) && (string) $desc->Name === 'Reglertyp') {
+                continue;
+            }
             if ($updateOnly) {
                 if ($propertiesId !== false && isset($properties[$tabGuiId])) {
                     $key = 'ID' . ($desc->ParameterId ?? 0);
@@ -640,6 +645,13 @@ class WolfSmartset extends IPSModule
             return;
         }
 
+        // Wie Home-Assistant: erst Online-Status prüfen; wenn Offline keine Parameter abfragen
+        $wasOnline = $this->fetchOnlineStatusOnce($headers);
+        if (!$wasOnline) {
+            $this->SetStatus(WSS_STATUS_COMM_ERROR);
+            return;
+        }
+
         $propertiesJson = GetValueString(IPS_GetObjectIDByIdent('Properties', $connectionNode));
         $properties = json_decode($propertiesJson, true);
         if (!is_array($properties)) {
@@ -683,7 +695,16 @@ class WolfSmartset extends IPSModule
             ];
 
             $response = $this->client()->request('api/portal/GetParameterValues', 'POST', $requestHeaders, $body);
-            if ($response === null || !isset($response->Values)) {
+            if ($response === null) {
+                continue;
+            }
+            // wolf_comm/HA: Bei ErrorCode/ErrorType/Message Token verwerfen, nächster Lauf holt ggf. neue GUI-Beschreibung
+            if (isset($response->ErrorCode) || isset($response->ErrorType)) {
+                $this->session()->clearStoredToken();
+                $this->SetStatus(WSS_STATUS_COMM_ERROR);
+                return;
+            }
+            if (!isset($response->Values)) {
                 continue;
             }
 
@@ -709,8 +730,6 @@ class WolfSmartset extends IPSModule
                 }
             }
         }
-
-        $this->GetOnlineStatus();
     }
 
     public function GetOnlineStatus(): void
@@ -719,10 +738,21 @@ class WolfSmartset extends IPSModule
         if ($headers === false) {
             return;
         }
+        $this->fetchOnlineStatusOnce($headers);
+    }
 
+    /**
+     * Holt Online-Status (GetSystemStateList), aktualisiert Variable NetworkStatus.
+     * Wie Home-Assistant: Gerät nur bei Online mit Werten aktualisieren.
+     *
+     * @param array<string> $headers Bereits ermittelte Auth-Header
+     * @return bool true wenn Gateway IsOnline === 1, sonst false
+     */
+    private function fetchOnlineStatusOnce(array $headers): bool
+    {
         $connectionNode = $this->GetIDForIdent('SystemName');
         if ($connectionNode === false) {
-            return;
+            return false;
         }
 
         $system = (object) [
@@ -732,9 +762,14 @@ class WolfSmartset extends IPSModule
         ];
 
         $response = $this->client()->request('api/portal/GetSystemStateList', 'POST', $headers, ['SystemList' => [$system]]);
-        if ($response !== null && is_array($response) && isset($response[0]->GatewayState->IsOnline)) {
-            $this->setInstanceValue('NetworkStatus', (int) $response[0]->GatewayState->IsOnline === 1 ? 'Online' : 'Offline');
+        if ($response === null || !is_array($response) || !isset($response[0]->GatewayState->IsOnline)) {
+            $this->setInstanceValue('NetworkStatus', 'Offline');
+            return false;
         }
+
+        $isOnline = (int) $response[0]->GatewayState->IsOnline === 1;
+        $this->setInstanceValue('NetworkStatus', $isOnline ? 'Online' : 'Offline');
+        return $isOnline;
     }
 
     public function RequestAction(string $ident, mixed $value): void

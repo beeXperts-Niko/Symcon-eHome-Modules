@@ -17,6 +17,7 @@ Objektorientierte Neuimplementierung der Wolf Smartset Portal-Anbindung für IP-
   - Bei abgelaufenem Token: automatischer Neu-Login
   - Beim Entfernen der Instanz (`Destroy`) und per Button „Session beenden“: Token löschen
 - **Sicherheit**: SSL-Verifizierung aktiv (`CURLOPT_SSL_VERIFYPEER`), keine Passwörter in Logs
+- **Anleihen**: Logik angeglichen an [Home-Assistant wolflink](https://github.com/home-assistant/core/tree/dev/homeassistant/components/wolflink) und [wolf_comm](https://github.com/janrothkegel/wolf-comm) (Reglertyp auslassen, Online-Check vor Wertabruf, Fehlerbehandlung GetParameterValues)
 
 ## Dateien
 
