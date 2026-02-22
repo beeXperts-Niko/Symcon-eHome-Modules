@@ -1,5 +1,5 @@
 {
-  "id": "{8A8E0A2C-5B2D-4E1F-9C3A-7D6B4E5F8A9C}",
+  "id": "{A1B2C3D4-E5F6-4A7B-8C9D-0E1F2A3B4C5D}",
   "author": "Niko Sinthern",
   "name": "Sinthex eHome Modules 2.0",
   "url": "https://github.com/beeXperts-Niko/Symcon-eHome-Modules",
@@ -10,7 +10,7 @@
     "version": "7.0"
   },
   "modules": [
-    "{56BF3243-6C7E-4B04-A0F7-92B00838B343}",
-    "{56BF3243-6C7E-4B04-00F7-92B00838B342}"
+    "{B2C3D4E5-F6A7-4B8C-9D0E-1F2A3B4C5D6E}",
+    "{C3D4E5F6-A7B8-4C9D-0E1F-2A3B4C5D6E7F}"
   ]
 }
