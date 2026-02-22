@@ -3,8 +3,8 @@
   "author": "Niko Sinthern",
   "name": "Sinthex eHome Modules 2.0",
   "url": "https://github.com/beeXperts-Niko/Symcon-eHome-Modules",
-  "version": "2.0.2",
-  "build": 2,
+  "version": "2.0.3",
+  "build": 3,
   "date": 0,
   "compatibility": {
     "version": "7.0"

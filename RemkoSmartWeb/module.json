@@ -1,1 +1,14 @@
-{"id":"{B2C3D4E5-F6A7-4B8C-9D0E-1F2A3B4C5D6E}","name":"RemkoSmartWeb","type":3,"vendor":"REMKO GmbH & Co. KG","aliases":["Remko Smart Wärmepumpe","Remko Wärmepumpe"],"parentRequirements":[],"childRequirements":[],"implemented":[],"prefix":"RSW"}
+{
+    "id": "{B2C3D4E5-F6A7-4B8C-9D0E-1F2A3B4C5D6E}",
+    "name": "Remko-Smartweb",
+    "type": 3,
+    "vendor": "beeXperts-Niko",
+    "aliases": [
+        "Remko Smart Wärmepumpe",
+        "Remko Wärmepumpe"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "RSW"
+}
