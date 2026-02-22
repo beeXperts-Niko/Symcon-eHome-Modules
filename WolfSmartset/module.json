@@ -1,1 +1,14 @@
-{"id":"{C3D4E5F6-A7B8-4C9D-0E1F-2A3B4C5D6E7F}","name":"WolfSmartset","type":3,"vendor":"Wolf Heiztechnik","aliases":["Wolf SmartSet-Device","Wolf Lüftungsanlage"],"parentRequirements":[],"childRequirements":[],"implemented":[],"prefix":"WSS"}
+{
+    "id": "{C3D4E5F6-A7B8-4C9D-0E1F-2A3B4C5D6E7F}",
+    "name": "WolfSmartset",
+    "type": 3,
+    "vendor": "Wolf Heiztechnik",
+    "aliases": [
+        "Wolf SmartSet-Device",
+        "Wolf Lüftungsanlage"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "WSS"
+}
